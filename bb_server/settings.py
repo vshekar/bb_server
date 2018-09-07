@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
-    'channels',
+    #'channels',
     'dataview.apps.DataviewConfig',
 ]
 
@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'dataview.middleware.OneSessionPerUserMiddleware',
 ]
 
 ROOT_URLCONF = 'bb_server.urls'
@@ -73,7 +74,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'bb_server.wsgi.application'
-ASGI_APPLICATION = "dataview.routing.application"
+#ASGI_APPLICATION = "dataview.routing.application"
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
